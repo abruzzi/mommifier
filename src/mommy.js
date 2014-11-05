@@ -14,19 +14,25 @@ function countVowels(word) {
 	return count;
 }
 
+function next(current, previous) {
+	var next = "";
+
+	if(isVowel(current)) {
+		if(!isVowel(previous)) {
+			next = "mommy";
+		}
+	} else {
+		next = current;
+	}
+
+	return next;
+}
+
 function replace(word) {
 	var str = "";
 
 	for(var i = 0; i < word.length; i++) {
-		if(isVowel(word[i])) {
-			if(!isVowel(word[i-1])) {
-				str += "mommy";
-			} else {
-				str += "";
-			}
-		} else {
-			str += word[i];
-		}
+		str += next(word[i], word[i-1]);
 	}
 
 	return str;
