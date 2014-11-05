@@ -12,4 +12,11 @@ describe("mommify", function() {
 		
 		expect(result).toEqual(expected);
 	});
+
+	it("should not mommify if there are vowels sequences", function() {
+		var expected = "shmommyr";
+		var result = mommify("shear");
+		
+		expect(result).toEqual(expected);
+	});
 });

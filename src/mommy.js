@@ -1,5 +1,5 @@
 function isVowel(character) {
-	return ['a', 'e', 'i', 'o', 'u'].indexOf(character) >= 0
+	return "aeiou".indexOf(character) >= 0;
 }
 
 function countVowels(word) {
@@ -19,7 +19,11 @@ function replace(word) {
 
 	for(var i = 0; i < word.length; i++) {
 		if(isVowel(word[i])) {
-			str += "mommy";
+			if(!isVowel(word[i-1])) {
+				str += "mommy";
+			} else {
+				str += "";
+			}
 		} else {
 			str += word[i];
 		}
