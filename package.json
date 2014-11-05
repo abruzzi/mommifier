@@ -1,0 +1,16 @@
+{
+  "name": "mommy",
+  "version": "0.0.1",
+  "description": "tdd workshop for TW pre-school",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Qiu Juntao",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "karma-jasmine": "~0.2.3",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma": "~0.12.24"
+  }
+}
