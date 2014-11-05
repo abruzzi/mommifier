@@ -2,28 +2,41 @@ function isVowel(character) {
 	return ['a', 'e', 'i', 'o', 'u'].indexOf(character) >= 0
 }
 
-function mommify(word) {
+function countVowels(word) {
 	var count = 0;
+
 	for(var i = 0; i < word.length; i++) {
 		if(isVowel(word[i])) {
 			count += 1;
 		}
 	}
 
+	return count;
+}
+
+function replace(word) {
 	var str = "";
 
-	if(count/word.length >= 0.30) {
-		
-		for(var i = 0; i < word.length; i++) {
-			if(isVowel(word[i])) {
-				str += "mommy";
-			} else {
-				str += word[i];
-			}
+	for(var i = 0; i < word.length; i++) {
+		if(isVowel(word[i])) {
+			str += "mommy";
+		} else {
+			str += word[i];
 		}
-	} else {
-		str = word;
 	}
 
 	return str;
+}
+
+function shouldBeMommify(word) {
+	var count = countVowels(word);
+	return count/word.length >= 0.30;
+}
+
+function mommify(word) {
+	if(shouldBeMommify(word)) {
+		return replace(word);
+	} else {
+		return word;
+	}
 }

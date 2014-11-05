@@ -9,6 +9,7 @@ describe("mommify", function() {
 	it("should mommify if the vowels greater than 30%", function() {
 		var expected = "shmommy";
 		var result = mommify("she");
+		
 		expect(result).toEqual(expected);
 	});
 });
