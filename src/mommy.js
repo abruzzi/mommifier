@@ -1,5 +1,9 @@
+var VOWELS = "aeiou";
+var REPLACEMENT = "mommy";
+var THRESHOLD = 0.30;
+
 function isVowel(character) {
-	return "aeiou".indexOf(character) >= 0;
+	return VOWELS.indexOf(character) >= 0;
 }
 
 function countVowels(word) {
@@ -19,7 +23,7 @@ function next(current, previous) {
 
 	if(isVowel(current)) {
 		if(!isVowel(previous)) {
-			next = "mommy";
+			next = REPLACEMENT;
 		}
 	} else {
 		next = current;
@@ -40,7 +44,7 @@ function replace(word) {
 
 function shouldBeMommify(word) {
 	var count = countVowels(word);
-	return count/word.length >= 0.30;
+	return count/word.length >= THRESHOLD;
 }
 
 function mommify(word) {
