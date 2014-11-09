@@ -4,7 +4,7 @@
   "description": "tdd workshop for TW pre-school",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --singleRun=true"
   },
   "author": "Qiu Juntao",
   "license": "BSD-2-Clause",
